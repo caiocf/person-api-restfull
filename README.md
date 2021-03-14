@@ -1,7 +1,8 @@
 # person-api-restfull
 
-## File Git Actions  with Maven and Push Ducker Hub
-[build.yml Action file](.github/workflows/build.yml)
+## Git Actions with Maven and Push Ducker Hub
+
+[build.yml file](.github/workflows/build.yml)
  
 
 ### Running Docker Hub
