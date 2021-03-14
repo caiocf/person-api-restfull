@@ -33,4 +33,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: caiocf/person-api-restfull:latest
+        tags: caiocf/person-api-restfull:$(date +%s)
