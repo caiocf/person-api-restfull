@@ -31,6 +31,10 @@ insert into users (account_non_expired, account_non_locked, credentials_non_expi
 insert into users (account_non_expired, account_non_locked, credentials_non_expired, enabled, full_name, password, user_name) values
 (true, true, true, true, 'Maria Ferreira', '$2a$16$h4yDQCYTy62R6xrtFDWONeMH3Lim4WQuU/aj8hxW.dJJoeyvtEkhK', 'maria');
 
+
+
+INSERT INTO BOOKS ("AUTHOR","LAUNCH_DATE","PRICE","TITLE") VALUES ('Andrew S. Tanenbaum e David Wetherall' ,CURRENT_TIMESTAMP(),188.99,'Redes de Computadores');
+
 -- caiocf / admin123
 -- maria / admin456
 /*INSERT INTO `users` (`user_name`, `full_name`, `password`, `account_non_expired`, `account_non_locked`, `credentials_non_expired`, `enabled`) VALUES

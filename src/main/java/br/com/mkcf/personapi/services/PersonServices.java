@@ -41,6 +41,7 @@ public class PersonServices {
 
     public PersonVO save(PersonVO personVO){
         var person = ModelMapperConvert.parseObject(personVO,Person.class);
+        person.setEnabled(true);
         return ModelMapperConvert.parseObject(personRepository.save(person),PersonVO.class);
     }
 

@@ -1,5 +1,6 @@
 package br.com.mkcf.personapi;
 
+import br.com.mkcf.personapi.config.FileStorageConfig;
 import br.com.mkcf.personapi.repository.PersonRepository;
 import br.com.mkcf.personapi.repository.UserRepository;
 import org.slf4j.Logger;
@@ -8,8 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
+@ConfigurationProperties
+@EnableConfigurationProperties({
+        FileStorageConfig.class
+})
 public class PersonApiApplication implements CommandLineRunner {
     private static final Logger logger = LoggerFactory.getLogger(PersonApiApplication.class);
 
