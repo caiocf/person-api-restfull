@@ -31,5 +31,6 @@ jobs:
     - name: Build and Push to Docker Hub
       uses: docker/build-push-action@v2
       with:
-        tags: caiocf/person-api-restfull
+        context: .
         push: true
+        tags: caiocf/person-api-restfull:latest
