@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Api(tags= "File Endpointt")
+@Api(tags= "File Endpoint")
 @RestController
 @RequestMapping("/api/file")
 public class FileController {
