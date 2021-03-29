@@ -3,8 +3,9 @@ package br.com.mkcf.personapi.controller;
 import br.com.mkcf.personapi.repository.UserRepository;
 import br.com.mkcf.personapi.security.AccountCredentialsVO;
 import br.com.mkcf.personapi.security.jwt.JwtTokenProvider;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @RequestMapping(path= "/auth")
-@Api(value = "Auth Endpoint")
+@Tag(name  = "Auth Endpoint")
 public class AuthController {
 
     @Autowired
@@ -37,7 +38,8 @@ public class AuthController {
 
     @PostMapping("/signin")
     @ResponseStatus(HttpStatus.CREATED)
-    @ApiOperation(value = "auth user")
+    @Operation(summary ="auth user")
+    @SecurityRequirements
     public ResponseEntity signin(@RequestBody @Valid AccountCredentialsVO data){
         try {
             var username = data.getUsername();

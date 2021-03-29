@@ -2,7 +2,7 @@ package br.com.mkcf.personapi.controller;
 
 import br.com.mkcf.personapi.data.vo.UploadFileResponseVO;
 import br.com.mkcf.personapi.services.FileStorageService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Api(tags= "File Endpoint")
+@Tag(name  =  "File Endpoint")
 @RestController
 @RequestMapping("/api/file")
 public class FileController {

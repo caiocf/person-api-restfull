@@ -78,18 +78,25 @@
         </dependency>
 
 
-        <!-- for Swagger Endpoints support -->
+        <!-- for Swagger Endpoints support
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
-        </dependency>
+        </dependency>-->
 
-        <!-- for Swagger UI support -->
+        <!-- for Swagger UI support
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
+        </dependency> -->
+
+        <!-- for Open API support -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.4.6</version>
         </dependency>
 
         <!-- For Security support -->
