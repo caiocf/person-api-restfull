@@ -46,7 +46,13 @@ jobs:
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=image::${env.DOCKER_REGISTRY}/${env.DOCKER_REPOSITORY}:${{ steps.extract_branch.outputs.branch }}"
-          echo ${{ image }}
+          echo ${{ steps.extract_branch.outputs.image }}
+          
+      - name: Print
+        shell: bash
+        run: |
+          echo ${{ steps.extract_branch.outputs.image }}        
+          
       - name: Build and Push to Docker Hub
         id: build-image
         uses: docker/build-push-action@v2
@@ -54,7 +60,6 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.extract_branch.outputs.image }}
-
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
