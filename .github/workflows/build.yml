@@ -33,4 +33,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: caiocf/person-api-restfull
+        tags: caiocf/person-api-restfull:${{ env.BRANCH_NAME }}
