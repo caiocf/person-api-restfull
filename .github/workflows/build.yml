@@ -45,15 +45,15 @@ jobs:
         shell: bash
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          echo "::set-output name=image::${DOCKER_REGISTRY}/${DOCKER_REPOSITORY}:${{ steps.extract_branch.outputs.branch }}"
-          echo ${{ steps.extract_branch.outputs.image }}
+          echo "::set-output name=image::${env.DOCKER_REGISTRY}/${env.DOCKER_REPOSITORY}:${{ steps.extract_branch.outputs.branch }}"
+          echo ${{ image }}
       - name: Build and Push to Docker Hub
         id: build-image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: ${{ steps.extract_branch.outputs.image }}:${{ steps.extract_branch.outputs.branch }}
+          tags: ${{ steps.extract_branch.outputs.image }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
