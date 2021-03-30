@@ -55,6 +55,7 @@ jobs:
           push: true
           tags: ${{ steps.extract_branch.outputs.image }}
 
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
