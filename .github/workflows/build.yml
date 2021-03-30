@@ -32,7 +32,7 @@ jobs:
         shell: bash
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          echo "::set-output name=image::$DOCKER_REGISTRY/$DOCKER_REPOSITORY:${{ steps.extract_branch.outputs.branch }}"
+          echo "::set-output name=image::$DOCKER_REGISTRY/$DOCKER_REPOSITORY:${GITHUB_REF#refs/heads/}"
           echo ${{ steps.extract_branch.outputs.image }}
 
       - name: Print
