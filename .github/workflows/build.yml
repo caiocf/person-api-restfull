@@ -80,7 +80,7 @@ jobs:
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
           container-name: ${{ env.CONTAINER_NAME }}
-          image: ${{ env.$DOCKER_REGISTRY }}/${{ steps.extract_branch.outputs.image }}
+          image: ${{ env.DOCKER_REGISTRY }}/${{ steps.extract_branch.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
