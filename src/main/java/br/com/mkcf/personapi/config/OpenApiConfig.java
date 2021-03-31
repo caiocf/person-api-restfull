@@ -29,7 +29,7 @@ public class OpenApiConfig {
 				.addSecurityItem(
 						new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read", "write")))
 				.info(new Info()
-						.title("RESTful API Person With Java 11 and Spring Boot 2.4.3")
+						.title("RESTful Person API With Java 11 and Spring Boot 2.4.3")
 						.version("v1")
 						.description("Some description about your API.")
 						.termsOfService("http://swagger.io/terms/")
